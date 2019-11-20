@@ -9,7 +9,7 @@ menu "Target packages"
 	source "package/motioneye/Config.in"
 	source "package/kerberosio-machinery/Config.in"
 	source "package/kerberosio-web/Config.in"
-endmenu
+
 
 menu "Audio and video applications"
 	source "package/alsa-utils/Config.in"
