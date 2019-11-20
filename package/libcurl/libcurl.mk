@@ -126,7 +126,7 @@ HOST_LIBCURL_CONF_OPTS = \
 	--disable-ntlm-wb \
 	--disable-curldebug \
 	--with-ssl \
-	--without-gnutls \
+	--with-gnutls \
 	--without-mbedtls \
 	--without-polarssl \
 	--without-nss
