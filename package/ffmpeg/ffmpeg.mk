@@ -56,7 +56,6 @@ FFMPEG_CONF_OPTS = \
 	--disable-libgsm \
 	--disable-libilbc \
 	--disable-libopenjpeg \
-	--disable-libschroedinger \
 	--disable-libvo-amrwbenc \
 	--disable-symver \
 	--disable-doc
