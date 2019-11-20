@@ -1,4 +1,4 @@
-/data/log/nginx/*log {
+/var/log/nginx/*log {
 	missingok
 	create 640 http log
 	sharedscripts
