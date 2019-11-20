@@ -1,4 +1,4 @@
-OS_NAME="motionEyeOS"
-OS_SHORT_NAME="motioneyeos"
-OS_PREFIX="meye"
+OS_NAME="KiOS"
+OS_SHORT_NAME="kios"
+OS_PREFIX="kios"
 OS_VERSION="unknown"
