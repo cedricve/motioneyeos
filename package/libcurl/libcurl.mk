@@ -49,13 +49,10 @@ else
 LIBCURL_CONF_OPTS += --without-ssl
 endif
 
-ifeq ($(BR2_PACKAGE_LIBCURL_GNUTLS),y)
 LIBCURL_CONF_OPTS += --with-gnutls=$(STAGING_DIR)/usr \
 	--with-ca-fallback
 LIBCURL_DEPENDENCIES += gnutls
-else
-LIBCURL_CONF_OPTS += --without-gnutls
-endif
+
 
 ifeq ($(BR2_PACKAGE_LIBCURL_LIBNSS),y)
 LIBCURL_CONF_OPTS += --with-nss=$(STAGING_DIR)/usr
