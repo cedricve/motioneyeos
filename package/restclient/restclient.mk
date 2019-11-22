@@ -9,4 +9,8 @@ RESTCLIENT_SITE = https://github.com/cedricve/restclient-cpp
 RESTCLIENT_SITE_METHOD = git
 RESTCLIENT_INSTALL_TARGET = YES
 
+define RESTCLIENT_PRE_CONFIGURE_HOOKS
+    bash autogen.sh
+endef
+
 $(eval $(autotools-package))
