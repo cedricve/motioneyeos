@@ -14,9 +14,19 @@ define RESTCLIENT_PRE_CONFIGURE_HOOKS
 endef
 
 
-define RESTCLIENT_PERL_CONFIGURE_CMDS
-	(cd $(@D); $(HOST_MAKE_ENV) ./configure)
-endef
+RESTCLIENT_CONF_OPTS = \
+	--target=$(GNU_TARGET_NAME) \
+	--target-tools-prefix=$(TARGET_CROSS) \
+	--prefix=/usr \
+	-Dld="$(TARGET_CC)" \
+	-Dccflags="$(TARGET_CFLAGS)" \
+	-Dldflags="$(TARGET_LDFLAGS) -lm" \
+	-Dmydomain="" \
+	-Dmyhostname="noname" \
+	-Dmyuname="Buildroot $(BR2_VERSION_FULL)" \
+	-Dosname=linux \
+	-Dosvers=$(LINUX_VERSION) \
+	-Dperladmin=root
 
 $(eval $(autotools-package))
 $(eval $(host-autotools-package))
