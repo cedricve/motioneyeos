@@ -13,5 +13,10 @@ define RESTCLIENT_PRE_CONFIGURE_HOOKS
     bash autogen.sh
 endef
 
+
+define RESTCLIENT_PERL_CONFIGURE_CMDS
+	(cd $(@D); $(HOST_MAKE_ENV) ./configure)
+endef
+
 $(eval $(autotools-package))
 $(eval $(host-autotools-package))
