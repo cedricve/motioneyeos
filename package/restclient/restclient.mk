@@ -14,3 +14,4 @@ define RESTCLIENT_PRE_CONFIGURE_HOOKS
 endef
 
 $(eval $(autotools-package))
+$(eval $(host-autotools-package))
