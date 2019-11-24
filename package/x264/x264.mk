@@ -4,7 +4,7 @@
 #
 ################################################################################
 
-X264_VERSION = ca5408b1
+X264_VERSION = e3fae10b
 X264_SITE = git://git.videolan.org/x264.git
 X264_LICENSE = GPLv2+
 X264_DEPENDENCIES = host-pkgconf
