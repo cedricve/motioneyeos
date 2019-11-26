@@ -24,13 +24,13 @@ BOOT_START=${BOOT_START:-1}  # MB
 BOOT_SRC=${IMG_DIR}/boot
 BOOT=${IMG_DIR}/.boot
 BOOT_IMG=${IMG_DIR}/boot.img
-BOOT_SIZE="40"  # MB - reserved up to 100 MB
+BOOT_SIZE="30"  # MB - reserved up to 100 MB
 
 ROOT_START="100"  # MB
 ROOT_SRC=${IMG_DIR}/rootfs.tar
 ROOT=${IMG_DIR}/.root
 ROOT_IMG=${IMG_DIR}/root.img
-ROOT_SIZE="275"  # MB
+ROOT_SIZE="250"  # MB
 
 GUARD_SIZE="10"  # MB
 DISK_SIZE=$((ROOT_START + ROOT_SIZE + GUARD_SIZE))
