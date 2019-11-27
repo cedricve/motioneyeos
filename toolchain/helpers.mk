@@ -163,7 +163,7 @@ copy_toolchain_sysroot = \
 #
 check_kernel_headers_version = \
 	if ! support/scripts/check-kernel-headers.sh $(1) $(2); then \
-		echo 1; \
+		exit 1; \
 	fi
 
 #
