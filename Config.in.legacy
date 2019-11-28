@@ -3925,13 +3925,6 @@ config BR2_sh3eb
 	  Due to an inexistent user base and generally poor Linux
 	  support, the support for the SH3eb architecture was removed.
 
-config BR2_KERNEL_HEADERS_3_1
-	bool "kernel headers version 3.1.x are no longer supported"
-	select BR2_LEGACY
-	help
-	  Version 3.1.x of the Linux kernel headers have been deprecated
-	  for more than four buildroot releases and are now removed.
-
 config BR2_KERNEL_HEADERS_3_3
 	bool "kernel headers version 3.3.x are no longer supported"
 	select BR2_LEGACY
