@@ -154,7 +154,36 @@ copy_toolchain_sysroot = \
 	fi ; \
 	find $(STAGING_DIR) -type d | xargs chmod 755
 
+#
+# Check the specified kernel headers version actually matches the
+# version in the toolchain.
+#
+# $1: sysroot directory
+# $2: kernel version string, in the form: X.Y
+#
+check_kernel_headers_version = \
+	if ! support/scripts/check-kernel-headers.sh $(1) $(2); then \
+		exit 1; \
+	fi
 
+#
+# Check the specific gcc version actually matches the version in the
+# toolchain
+#
+# $1: path to gcc
+# $2: expected gcc version
+#
+check_gcc_version = \
+	expected_version="$(strip $2)" ; \
+	if [ -z "$${expected_version}" ]; then \
+		exit 0 ; \
+	fi; \
+	real_version=`$(1) -dumpversion` ; \
+	if [[ ! "$${real_version}" =~ ^$${expected_version}\. ]] ; then \
+		printf "Incorrect selection of gcc version: expected %s.x, got %s\n" \
+			"$${expected_version}" "$${real_version}" ; \
+		exit 1 ; \
+	fi
 
 #
 # Check the availability of a particular glibc feature. This function
