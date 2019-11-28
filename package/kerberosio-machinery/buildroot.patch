@@ -48,7 +48,7 @@ index 25adc1e..a8a0e0e 100755
 +    -DCMAKE_TOOLCHAIN_FILE=${CMAKE_SOURCE_DIR}/../../host/usr/share/buildroot/toolchainfile.cmake
 +    -DCMAKE_INSTALL_PREFIX:PATH=${CMAKE_SOURCE_DIR}/../../host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/
  )
-
+ 
 -set(OPENCV_INCLUDE_DIR ${CMAKE_BINARY_DIR}/thirdparty/include/)
 +set(OPENCV_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/../../host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/include/)
  if(NOT WIN32)
@@ -60,7 +60,7 @@ index 25adc1e..a8a0e0e 100755
 @@ -63,9 +64,9 @@ set(OPENCV_LIBRARIES opencv_imgproc opencv_core opencv_highgui opencv_video open
  include_directories(${OPENCV_INCLUDE_DIR})
  link_directories(${OPENCV_LIBRARY_DIR})
-
+ 
 -if(EXISTS "${CMAKE_BINARY_DIR}/thirdparty/share/OpenCV/OpenCVConfig.cmake")
 -    include(${CMAKE_BINARY_DIR}/thirdparty/share/OpenCV/OpenCVConfig.cmake)
 +if(EXISTS "${CMAKE_SOURCE_DIR}/../../host/usr/arm-buildroot-linux-gnueabihf/sysroot/usr/share/OpenCV/OpenCVConfig.cmake")
@@ -82,7 +82,7 @@ index 6f2f55c..cba0df1 100755
 +    -DCMAKE_TOOLCHAIN_FILE=${CMAKE_SOURCE_DIR}/../../host/usr/share/buildroot/toolchainfile.cmake
      -DBUILD_SHARED_LIBS=OFF
  )
-
+ 
 diff --git a/cmake/External-Restclient.cmake b/cmake/External-Restclient.cmake
 index 5cd3a44..1b41703 100755
 --- a/cmake/External-Restclient.cmake
@@ -92,13 +92,13 @@ index 5cd3a44..1b41703 100755
    UPDATE_COMMAND ""
    PATCH_COMMAND ""
 -  CONFIGURE_COMMAND ./autogen.sh && ./configure
-+  CONFIGURE_COMMAND ./autogen.sh && ./configure --host=arm-linux-gnueabihf
++  CONFIGURE_COMMAND ./autogen.sh && ./configure --host=arm-buildroot-linux-gnueabihf
    BUILD_COMMAND make && mkdir -p ../thirdparty/lib/ && cp .libs/librestclient-cpp.a ../thirdparty/lib/
    INSTALL_COMMAND ""
  )
 @@ -18,4 +18,4 @@ set(RESTCLIENT_LIBRARY_DIR ${CMAKE_BINARY_DIR}/thirdparty/lib/)
  set(RESTCLIENT_LIBRARIES restclient-cpp curl)
-
+ 
  include_directories(${RESTCLIENT_INCLUDE_DIR})
 -link_directories(${RESTCLIENT_LIBRARY_DIR})
 \ No newline at end of file
