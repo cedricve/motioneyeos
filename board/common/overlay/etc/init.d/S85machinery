@@ -25,7 +25,7 @@ watch() {
     while true; do
         sleep 3
 
-        pid=$(pgrep -l kerberosio | cut -d ' ' -f 1)
+        pid=$(pidof kerberosio)
         if [ "$pid" = "" ]; then
                 echo "Starting kerberos.io machinery"
                 sleep 1
