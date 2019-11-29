@@ -31,7 +31,7 @@ rm -rf ${TARGET}/var/spool
 rm -rf ${TARGET}/var/tmp
 
 ln -s /tmp ${TARGET}/var/cache
-ln -s /data/varlib ${TARGET}/var/lib
+ln -s /data/var/lib ${TARGET}/var/lib
 ln -s /tmp ${TARGET}/var/lock
 ln -s /data/log ${TARGET}/var/log
 ln -s /tmp ${TARGET}/var/run
@@ -51,4 +51,3 @@ fi
 if ! grep -E '^admin:' ${TARGET}/etc/passwd &> /dev/null; then
     echo "admin:x:0:0:root:/root:/bin/sh" >> ${TARGET}/etc/passwd
 fi
-
