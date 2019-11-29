@@ -31,7 +31,7 @@ rm -rf ${TARGET}/var/spool
 rm -rf ${TARGET}/var/tmp
 
 ln -s /tmp ${TARGET}/var/cache
-#ln -s /data/varlib ${TARGET}/var/lib
+ln -s /data/varlib ${TARGET}/var/lib
 ln -s /tmp ${TARGET}/var/lock
 ln -s /data/log ${TARGET}/var/log
 ln -s /tmp ${TARGET}/var/run
