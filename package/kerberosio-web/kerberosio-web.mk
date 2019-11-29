@@ -18,11 +18,11 @@ KERBEROSIO_WEB_DEPENDENCIES = kerberosio-machinery nginx php
 
 define KERBEROSIO_WEB_BUILD_CMDS
     (cd $(@D); \
-        $(TARGET_DIR)/usr/bin/php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php; \
-        $(TARGET_DIR)/usr/bin/php composer-setup.php; \
-        $(TARGET_DIR)/usr/bin/php -r "unlink('composer-setup.php');"; \
-        $(TARGET_DIR)/usr/bin/php composer.phar install --no-dev; \
-        $(TARGET_DIR)/usr/bin/php artisan key:generate; \
+        php -r "readfile('https://getcomposer.org/installer');" > composer-setup.php; \
+        php composer-setup.php; \
+        php -r "unlink('composer-setup.php');"; \
+        php composer.phar install --no-dev; \
+        php artisan key:generate; \
         cd public; \
         bower install --allow-root; \
         npm install grunt-contrib-watch grunt-contrib-less grunt-contrib-cssmin grunt-contrib-clean; \
