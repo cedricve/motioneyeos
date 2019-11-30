@@ -25,9 +25,9 @@ NGINX_CONF_OPTS = \
 #
 # So, we just need to create the directories used by nginx with the right
 # ownership.
-define NGINX_PERMISSIONS
-	/var/lib/nginx d 755 33 33 - - - - -
-endef
+#define NGINX_PERMISSIONS
+#	/var/lib/nginx d 755 33 33 - - - - -
+#endef
 
 # disable external libatomic_ops because its detection fails.
 NGINX_CONF_ENV += \
