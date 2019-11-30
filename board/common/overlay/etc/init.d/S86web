@@ -8,6 +8,9 @@ start() {
 
     if [ -d $sys_conf ] && ! [ -d $conf ]; then
 
+        mkdir -p /data/varlib/nginx
+        chmod 755 /data/varlib/nginx
+
         cp -R /var/www/web/storage /data/web/
         chmod -R 777 /data/web/storage
 
