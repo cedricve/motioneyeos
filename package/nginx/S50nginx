@@ -4,16 +4,17 @@
 #
 
 PIDFILE=/var/run/nginx.pid
+PROG="/usr/sbin/nginx"
 
 case "$1" in
   start)
 	echo "Starting nginx..."
-	mkdir -p /data/log/nginx
-	start-stop-daemon -S -x /usr/sbin/nginx -p $PIDFILE
+	mkdir -p /var/log/nginx /var/tmp/nginx
+	${PROG}
 	;;
   stop)
 	echo -n "Stopping nginx..."
-	start-stop-daemon -K -o -p $PIDFILE
+	killall -q $(basename ${PROG})
 	;;
   restart|reload)
 	"$0" stop
