@@ -11,6 +11,8 @@ start() {
         mkdir -p /data/varlib/nginx
         chmod 755 /data/varlib/nginx
 
+        mkdir -p /var/www/web
+
         cp -R /var/www/web/storage /data/web/
         chmod -R 777 /data/web/storage
 
