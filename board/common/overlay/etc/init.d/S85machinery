@@ -51,7 +51,7 @@ start() {
     echo  "Starting kerberos.io machinery"
     watch &
 
-    if [ "$autoremoval" == "yes" ]; then
+    if [ "$AUTOREMOVAL" == "yes" ]; then
         autoremoval &
     fi
 }
